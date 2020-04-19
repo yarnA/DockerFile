@@ -1,9 +1,7 @@
 FROM alpine:3.11.5
-
 MAINTAINER alpine_sshd (yarn2856@163.com)
 
 RUN sed -i "s@http://dl-cdn.alpinelinux.org/@https://mirrors.huaweicloud.com/@g" /etc/apk/repositories
-
 RUN apk update && \
     apk add --no-cache openssh tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
